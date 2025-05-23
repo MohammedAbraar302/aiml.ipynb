@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLIRTY Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-header">
+            <div class="logo">
+                <span style="color: #5131ec">F</span><span style="color: #EA4335">l</span><span style="color: #FBBC05">i</span><span style="color: #4285F4">r</span><span style="color: #34A853">t</span><span style="color: #EA4335">y</span>&nbsp;<span style="color: #d3f442c2">Bot</span>
+            </div>
+            <div class="header-controls">
+                <button id="themeToggle" class="theme-toggle">
+                    <span class="light-icon">🌞</span>
+                    <span class="dark-icon">🌙</span>
+                </button>
+                <select id="modelSelect" class="model-select">
+                    <option value="llama3">Mixtral 8x7B</option>
+                    <option value="gpt4">GPT-4</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <!-- Chat messages will appear here -->
+        </div>
+
+        <div class="input-container">
+            <div class="search-box">
+                <input type="text" id="userInput" placeholder="Tell me about yourself...">
+                <button id="voiceButton" class="voice-button" title="Record voice">
+                    <span class="mic-icon">🎤</span>
+                </button>
+                <button onclick="getRoast()">GET REPLY</button>
+            </div>
+        </div>
+
+        <audio id="audioPlayer"></audio>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
